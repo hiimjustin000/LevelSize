@@ -91,15 +91,18 @@ class $modify(LSLevelBrowserLayer, LevelBrowserLayer) {
     }
 
     void setupLevelBrowser(CCArray* levelArray) {
-        if (sortBySize) sortLevelsBySize(true);
-        else LevelBrowserLayer::setupLevelBrowser(levelArray);
-        if (Mod::get()->getSettingValue<bool>("show-total-size")) {
-            CCLabelBMFont* totalSizeLabel = static_cast<CCLabelBMFont*>(this->getChildByID("total-size-label"_spr));
-            if (totalSizeLabel != nullptr) {
-                totalSizeLabel->setString(("Total Size: " + getSizeString(getTotalSize(m_list->m_listView->m_entries))).c_str());
-                if (totalSizeLabel->getScaledContentSize().width > 130.0f) totalSizeLabel->setScale(52.0f / totalSizeLabel->getScaledContentSize().width);
+        if (m_searchObject->m_searchType == SearchType::MyLevels) {
+            if (sortBySize) sortLevelsBySize(true);
+            else LevelBrowserLayer::setupLevelBrowser(levelArray);
+            if (Mod::get()->getSettingValue<bool>("show-total-size")) {
+                CCLabelBMFont* totalSizeLabel = static_cast<CCLabelBMFont*>(this->getChildByID("total-size-label"_spr));
+                if (totalSizeLabel != nullptr) {
+                    totalSizeLabel->setString(("Total Size: " + getSizeString(getTotalSize(m_list->m_listView->m_entries))).c_str());
+                    if (totalSizeLabel->getScaledContentSize().width > 130.0f) totalSizeLabel->setScale(52.0f / totalSizeLabel->getScaledContentSize().width);
+                }
             }
         }
+        else LevelBrowserLayer::setupLevelBrowser(levelArray);
     }
 };
 
