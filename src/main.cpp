@@ -68,6 +68,8 @@ class $modify(LSLevelBrowserLayer, LevelBrowserLayer) {
                 this->addChild(totalSizeLabel);
             }
         }
+
+        return true;
     }
 
     void sortLevelsBySize(bool enabled) {
