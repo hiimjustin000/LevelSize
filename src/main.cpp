@@ -34,10 +34,10 @@ int getTotalSize(CCArray* levels) {
 class $modify(LSLevelBrowserLayer, LevelBrowserLayer) {
     bool init(GJSearchObject* searchObject) {
         if (!LevelBrowserLayer::init(searchObject)) return false;
+        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 
         if (searchObject->m_searchType == SearchType::MyLevels) {
             CCMenu* myLevelsMenu = static_cast<CCMenu*>(this->getChildByID("my-levels-menu"));
-            CCLabelBMFont* selectAllText = static_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"));
             CCMenu* sizeSortMenu = CCMenu::create();
             sizeSortMenu->setPosition(0.0f, 0.0f);
             sizeSortMenu->setID("size-sort-menu"_spr);
@@ -62,10 +62,9 @@ class $modify(LSLevelBrowserLayer, LevelBrowserLayer) {
                 CCLabelBMFont* totalSizeLabel = CCLabelBMFont::create(("Total Size: " + getSizeString(getTotalSize(m_list->m_listView->m_entries))).c_str(), "bigFont.fnt");
                 totalSizeLabel->setScale(0.4f);
                 if (totalSizeLabel->getScaledContentSize().width > 130.0f) totalSizeLabel->setScale(52.0f / totalSizeLabel->getScaledContentSize().width);
-                totalSizeLabel->setPosition(379.5f, selectAllText->getPositionY());
-                totalSizeLabel->setZOrder(10);
+                totalSizeLabel->setPosition(winSize.width / 2 + 95.0f, winSize.height / 2 - 122.0f);
                 totalSizeLabel->setID("total-size-label"_spr);
-                this->addChild(totalSizeLabel);
+                this->addChild(totalSizeLabel, 10);
             }
         }
 
