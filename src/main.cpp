@@ -112,17 +112,10 @@ class $modify(LSLevelCell, LevelCell) {
         LevelCell::loadLocalLevelCell();
 
         if (Mod::get()->getSettingValue<bool>("show-size")) {
-            CCLabelBMFont* nameLabel = static_cast<CCLabelBMFont*>(m_mainLayer->getChildByID("level-name"));
-            CCNode* levelRevision = m_mainLayer->getChildByID("level-revision");
-            CCLabelBMFont* revLabel = levelRevision != nullptr ? static_cast<CCLabelBMFont*>(levelRevision) : nullptr;
-            CCLabelBMFont* sizeLabel = CCLabelBMFont::create(getSizeString(m_level->m_levelString.size()).c_str(), "bigFont.fnt");
-            sizeLabel->setAnchorPoint({ 0.0f, 0.0f });
-            sizeLabel->setScale(0.3f);
-            if (sizeLabel->getScaledContentSize().width > 30.0f && nameLabel->getContentWidth() * 0.8f >= 190.0f)
-                sizeLabel->setScale(9.0f / sizeLabel->getScaledContentSize().width);
-            sizeLabel->setPosition(nameLabel->getPositionX() + nameLabel->getScaledContentSize().width + 10.0f,
-                revLabel != nullptr ? revLabel->getScaledContentSize().height + revLabel->getPositionY() :
-                nameLabel->getPositionY() - nameLabel->getScaledContentSize().height / 2 + 1.0f);
+            CCLabelBMFont* sizeLabel = CCLabelBMFont::create(getSizeString(m_level->m_levelString.size()).c_str(), "goldFont.fnt");
+            sizeLabel->setPosition(m_width - 6.0f, 3.0f);
+            sizeLabel->setAnchorPoint({ 1.0f, 0.0f });
+            sizeLabel->setScale(0.4f);
             sizeLabel->setID("size-label"_spr);
             m_mainLayer->addChild(sizeLabel);
         }
