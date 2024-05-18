@@ -1,23 +1,22 @@
 {
-    "geode": "2.0.0-beta.23",
+    "geode": "2.0.0-beta.26",
     "gd": {
         "android": "2.205",
+        "ios": "2.205",
         "win": "2.204",
         "mac": "2.200"
     },
-    "version": "v1.0.3",
+    "version": "v1.1.0",
     "id": "hiimjustin000.level_size",
     "name": "Level Size",
     "developer": "hiimjustin000",
     "description": "Allows you to view the size of local levels and sort by them.",
     "repository": "https://github.com/hiimjustin000/LevelSize",
-    "dependencies": [
-        {
-            "id": "geode.node-ids",
-            "version": ">=v1.9.1",
-            "importance": "required"
-        }
-    ],
+    "resources": {
+        "sprites": [
+            "resources/*.png"
+        ]
+    },
     "settings": {
         "show-size": {
             "name": "Show Local Level Size",
