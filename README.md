@@ -1,5 +1,5 @@
 # Level Size
-Allows you to view the size of local levels and sort by them.
+A mod that allows you to view the size of local levels.
 
 # Features
 - View the size of local levels

@@ -1,4 +1,7 @@
 # Level Size Changelog
+## v1.1.1 (2024-06-07)
+- Ported to Geometry Dash v2.206
+
 ## v1.1.0 (2024-05-18)
 - Changed the appearance of the sort by size button and moved it to the bottom center of the level browser
 - Added iOS support
