@@ -29,5 +29,10 @@
             "type": "bool",
             "default": true
         }
-    }
+    },
+    "tags": [
+        "enhancement",
+        "interface",
+        "offline"
+    ]
 }
