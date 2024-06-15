@@ -1,4 +1,7 @@
 # Level Size Changelog
+## v1.1.2 (2024-06-14)
+- Finalized the release of v1.1.2
+
 ## v1.1.2-beta.1 (2024-06-08)
 - Fixed a few things
 
