@@ -1,7 +1,8 @@
 # Level Size
-A mod that allows you to view the size of local levels.
+A mod that shows local and saved level sizes.
 
-# Features
-- View the size of local levels
-- Sort local levels by size
-- View the total size of the local levels on the current page
+## Features
+- A label that shows the size of the current level in the local and saved level browsers
+- A button that sorts local or saved levels by size
+- A label that shows the total size of the local or saved levels on the current page
+- A label that shows the overall size of the local or saved levels in the current folder

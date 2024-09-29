@@ -1,4 +1,8 @@
 # Level Size Changelog
+## v1.2.0 (2024-09-29)
+- Added support for saved level sizes
+- Added a label that shows the overall size of the local or saved levels in the current folder
+
 ## v1.1.2 (2024-06-14)
 - Finalized the release of v1.1.2
 

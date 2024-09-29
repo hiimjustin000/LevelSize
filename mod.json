@@ -1,16 +1,15 @@
 {
-    "geode": "3.0.0-beta.1",
+    "geode": "3.7.1",
     "gd": {
         "win": "2.206",
         "mac": "2.206",
         "android": "2.206"
     },
-    "version": "v1.1.2",
+    "version": "v1.2.0",
     "id": "hiimjustin000.level_size",
     "name": "Level Size",
     "developer": "hiimjustin000",
-    "description": "A mod that allows you to view the size of local levels.",
-    "repository": "https://github.com/hiimjustin000/LevelSize",
+    "description": "A mod that shows local and saved level sizes.",
     "resources": {
         "sprites": [
             "resources/*.png"
@@ -18,17 +17,34 @@
     },
     "settings": {
         "show-size": {
-            "name": "Show Local Level Size",
-            "description": "Whether or not to show the size of a local level.",
+            "name": "Show Level Size",
+            "description": "Whether or not to show the size of a level.",
             "type": "bool",
             "default": true
         },
         "show-total-size": {
             "name": "Show Total Size",
-            "description": "Whether or not to show the total size of the local levels on the current page.",
+            "description": "Whether or not to show the total size of the levels on the current page.",
             "type": "bool",
             "default": true
+        },
+        "show-overall-size": {
+            "name": "Show Overall Size",
+            "description": "Whether or not to show the overall size of all levels in the current folder.",
+            "type": "bool",
+            "default": true
+        },
+        "white-size": {
+            "name": "White Size",
+            "description": "Whether or not to show the size of a saved level in white.",
+            "type": "bool",
+            "default": false
         }
+    },
+    "links": {
+        "community": "https://discord.gg/QVKmbvBXA7",
+        "source": "https://github.com/hiimjustin000/LevelSize",
+        "homepage": "https://www.hiimjustin000.com"
     },
     "tags": [
         "enhancement",
