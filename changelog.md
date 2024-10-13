@@ -1,4 +1,7 @@
 # Level Size Changelog
+## v1.2.1 (2024-10-12)
+- Fixed an incompatibility with the mod "Compact Lists" by Cvolton
+
 ## v1.2.0 (2024-09-29)
 - Added support for saved level sizes
 - Added a label that shows the overall size of the local or saved levels in the current folder

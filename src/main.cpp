@@ -161,8 +161,12 @@ class $modify(LSLevelCell, LevelCell) {
                 sizeLabel->setScale(0.4f);
             } else if (level->m_levelType == GJLevelType::Saved) {
                 sizeLabel = CCLabelBMFont::create(getSizeString(level->m_levelString.size()).c_str(), "chatFont.fnt");
-                sizeLabel->setPosition(346.0f, m_mainLayer->getChildByID("hiimjustin000.integrated_demonlist/level-rank-label") ? 12.0f : 1.0f);
-                sizeLabel->setScale(0.6f);
+                auto levelRankLabel = m_mainLayer->getChildByID("hiimjustin000.integrated_demonlist/level-rank-label");
+                sizeLabel->setPosition(
+                    346.0f - (m_compactView && levelRankLabel ? levelRankLabel->getScaledContentWidth() + 3.0f : 0.0f),
+                    !m_compactView && levelRankLabel ? 12.0f : 1.0f
+                );
+                sizeLabel->setScale(m_compactView ? 0.45f : 0.6f);
                 auto whiteSize = Mod::get()->getSettingValue<bool>("white-size");
                 sizeLabel->setColor(whiteSize ? ccColor3B { 255, 255, 255 } : ccColor3B { 51, 51, 51 });
                 sizeLabel->setOpacity(whiteSize ? 200 : 152);
