@@ -1,4 +1,7 @@
 # Level Size Changelog
+## v1.2.2-beta.1 (2024-11-13)
+- Ported to Geometry Dash v2.207
+
 ## v1.2.1 (2024-10-12)
 - Fixed an incompatibility with the mod "Compact Lists" by Cvolton
 
