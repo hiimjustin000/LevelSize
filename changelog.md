@@ -1,4 +1,7 @@
 # Level Size Changelog
+## v1.2.3 (2024-11-20)
+- Fixed the level size label on daily/weekly/event levels
+
 ## v1.2.2 (2024-11-15)
 - Ported to Geode v4.0.0-beta.1
 

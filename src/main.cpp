@@ -46,7 +46,7 @@ class $modify(LSLevelBrowserLayer, LevelBrowserLayer) {
         auto searchType = searchObject->m_searchType;
         if (searchType != SearchType::MyLevels && searchType != SearchType::SavedLevels) return true;
 
-        auto winSize = CCDirector::sharedDirector()->getWinSize();
+        auto winSize = CCDirector::get()->getWinSize();
 
         auto sizeSortMenu = CCMenu::create();
         sizeSortMenu->setPosition(winSize / 2 - CCPoint { 0.0f, 124.0f });
@@ -111,9 +111,9 @@ class $modify(LSLevelBrowserLayer, LevelBrowserLayer) {
     CCArray* getLevelArray() {
         switch (m_searchObject->m_searchType) {
             case SearchType::MyLevels:
-                return LocalLevelManager::sharedState()->getCreatedLevels(m_searchObject->m_folder);
+                return LocalLevelManager::get()->getCreatedLevels(m_searchObject->m_folder);
             case SearchType::SavedLevels:
-                return GameLevelManager::sharedState()->getSavedLevels(false, m_searchObject->m_folder);
+                return GameLevelManager::get()->getSavedLevels(false, m_searchObject->m_folder);
             default:
                 return CCArray::create();
         }
@@ -188,8 +188,10 @@ class $modify(LSLevelCell, LevelCell) {
                     346.0f - (m_compactView && levelRankLabel ? levelRankLabel->getScaledContentWidth() + 3.0f : 0.0f),
                     !m_compactView && levelRankLabel ? 12.0f : 1.0f
                 });
+                auto isDaily = m_level->m_dailyID.value() > 0;
+                if (isDaily) sizeLabel->setPosition({ 363.0f, -5.0f });
                 sizeLabel->setScale(m_compactView ? 0.45f : 0.6f);
-                auto whiteSize = Mod::get()->getSettingValue<bool>("white-size");
+                auto whiteSize = Mod::get()->getSettingValue<bool>("white-size") || isDaily;
                 sizeLabel->setColor(whiteSize ? ccColor3B { 255, 255, 255 } : ccColor3B { 51, 51, 51 });
                 sizeLabel->setOpacity(whiteSize ? 200 : 152);
                 sizeLabel->setAnchorPoint({ 1.0f, 0.0f });
